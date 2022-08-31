@@ -13,3 +13,4 @@ while (count <= number)
     if (count % 2 == 0) Console.Write($"{count}; ");
     count++;
 }
+// Прошу заметить, что в ветке hw1_8_second я написал альтернативное решение задачи (более развернутое)
