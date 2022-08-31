@@ -8,8 +8,27 @@ Console.Write("Введите любое число: ");
 int number = int.Parse(Console.ReadLine());
 int count = 1;
 Console.Write($"Список четных чисел от 1 до {number}: ");
-while (count <= number)
+
+if (number > 1)
 {
-    if (count % 2 == 0) Console.Write($"{count}; ");
-    count++;
+    while (count <= number)
+    {
+        if (count % 2 == 0)               // В такой конструкции добавляется строка, но итераций будет меньше проходить
+        {                                 // за счет того, что с первого прохода определяет четное число и прибавляет к нему двойку постоянно 
+            Console.Write($"{count}; ");
+            count = count + 2;
+        }
+        else count++;
+    }
 }
+
+else if (number <= 0)
+{
+    while (count >= number)
+    {
+        if (count % 2 == 0) Console.Write($"{count}; "); // В этой конструкции проверяется каждое число диапазона
+        count--;
+    }
+}
+
+else Console.WriteLine("Четных чисел нет");
